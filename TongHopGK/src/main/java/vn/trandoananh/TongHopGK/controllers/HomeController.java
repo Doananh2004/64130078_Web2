@@ -8,21 +8,21 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String HomePage() {
-		return "homeView";
+		return "frontEndViews/index";
 	}
 	
 	@GetMapping("/about")
 	public String AboutPage() {
-		return "aboutView";
+		return "frontEndViews/about";
 	}
 	
 	@GetMapping("/studentList")
 	public String StudentListPage() {
-		return "studentListView";
+		return "frontEndViews/studentList";
 	}
 	
 	@GetMapping("/addNew")
 	public String AddNew() {
-		return "addNewView";
+		return "frontEndViews/addNew";
 	}
 }
