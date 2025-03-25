@@ -4,11 +4,12 @@ public class SinhVien {
 	
 	public String MSSV;
 	public String HoTen;
-	public double DiemTB;
+	public float DiemTB;
 	
-	public SinhVien(String mssv, String hoTen, double diemTB) {
+	public SinhVien(String mssv, String hoTen, float diemTB) {
 		MSSV = mssv;
 		HoTen = hoTen;
 		DiemTB = diemTB;
 	}
+	
 }
