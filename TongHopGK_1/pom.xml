@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>vn.trandoananh</groupId>
-	<artifactId>TongHopGK</artifactId>
+	<artifactId>TongHopGK_1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TongHopGK</name>
-	<description>On tap GK</description>
+	<name>TongHopGK_1</name>
+	<description>Ôn tập giữa kỳ</description>
 	<url/>
 	<licenses>
 		<license/>

@@ -1,4 +1,4 @@
-package vn.trandoananh.TongHopGK.controllers;
+package vn.trandoananh.TongHopGK_1.controllers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
-import vn.trandoananh.TongHopGK.model.SinhVien;
+import vn.trandoananh.TongHopGK_1.model.SinhVien;
 
 @Controller
 public class HomeController {
 	
-	ArrayList<SinhVien> sinhVienList = new ArrayList<SinhVien>(Arrays.asList(
-			new SinhVien("64130078", "Trần Doãn Anh", 7.5),
-			new SinhVien("6413005", "Hoàng Duy An", 9.0)
+	ArrayList<SinhVien> dsSinhVien = new ArrayList<SinhVien>(Arrays.asList(
+			new SinhVien("64130078", "Trần Doãn Anh", 7.5)
 			));
-
+	
 	@GetMapping("/")
 	public String HomePage() {
 		return "index";
@@ -31,12 +30,12 @@ public class HomeController {
 	
 	@GetMapping("/studentList")
 	public String StudentListPage(ModelMap m) {
-		m.addAttribute("svs", sinhVienList);
+		m.addAttribute("svs", dsSinhVien);
 		return "studentList";
 	}
 	
 	@GetMapping("/addNew")
-	public String AddNew() {
+	public String AddNewStudent() {
 		return "newStudent";
 	}
 	
@@ -46,8 +45,8 @@ public class HomeController {
 		String hoTen = request.getParameter("hoTen");
 		double diemTB = Double.parseDouble(request.getParameter("diemTB"));
 		SinhVien student = new SinhVien(mssv, hoTen, diemTB);
-		sinhVienList.add(student);
-		model.addAttribute("sv", sinhVienList);
+		dsSinhVien.add(student);
+		model.addAttribute("sv", dsSinhVien);
 		return "list";
 	}
 }

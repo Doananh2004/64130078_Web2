@@ -1,13 +1,13 @@
-package vn.trandoananh.TongHopGK;
+package vn.trandoananh.TongHopGK_1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TongHopGkApplication {
+public class TongHopGk1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TongHopGkApplication.class, args);
+		SpringApplication.run(TongHopGk1Application.class, args);
 	}
 
 }
