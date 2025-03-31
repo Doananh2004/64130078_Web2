@@ -47,6 +47,6 @@ public class HomeController {
 		SinhVien student = new SinhVien(mssv, hoTen, diemTB);
 		dsSinhVien.add(student);
 		model.addAttribute("sv", dsSinhVien);
-		return "list";
+		return "studentList";
 	}
 }
