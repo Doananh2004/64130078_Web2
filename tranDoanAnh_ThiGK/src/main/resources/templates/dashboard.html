@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+        }
+        .sidebar {
+            border: 1px solid black;
+            padding: 10px;
+            width: 200px;
+        }
+        .content {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Dashboard</h3>
+            <ul>
+                <li><a href="/page/all">Page - List</a></li>
+                <li><a href="/page/new">Page - Addnew</a></li>
+                <li><a href="/post/all">Post - List</a></li>
+                <li><a href="/post/new">Post - Addnew</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <p th:text="${stats}"></p>
+        </div>
+    </div>
+</body>
+</html>
