@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CV App</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table.layout {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-right: 1px solid #000;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .header {
+            height: 60px;
+            text-align: right;
+            padding: 10px;
+            border-bottom: 1px solid #000;
+        }
+
+        .content {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            border-top: 1px solid #000;
+            height: 40px;
+        }
+
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .logo {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table class="layout" border="1">
+        <!-- Header -->
+        <tr>
+            <td colspan="2">
+                <div class="header">
+                    <span>Trần Doãn Anh</span>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Main Content -->
+        <tr style="height:100%;">
+            <!-- Sidebar -->
+            <td class="sidebar">
+                <div class="logo">
+                    <img src="Logo-Khoa-CNTT-NTU.png" alt="Logo" width="120"/>
+                </div>
+                <b>Dashboard</b><br/>
+                <a th:href="@{/dashboard}">Home</a><br/>
+
+                <b>Page</b><br/>
+                <a th:href="@{/page/all}">Page - List</a><br/>
+                <a th:href="@{/page/new}">Page - Addnew</a><br/>
+
+                <b>Post</b><br/>
+                <a th:href="@{/post/all}">Post - List</a><br/>
+                <a th:href="@{/post/new}">Post - Addnew</a>
+            </td>
+
+            <!-- Page Content -->
+            <td class="content" th:fragment="body">
+                Họ và tên: Trần Doãn Anh<br/>
+                Lớp: 64.CNTT-CLC<br/>
+                Sinh viên năm 3 ngành CNTT trường Đại học Nha Trang
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td colspan="2" class="footer">
+                ©2025 by Trần Doãn Anh – FIT.NTU
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Page Detail</h2>
+<p><b>Page Name:</b> <span th:text="${page.pageName}"></span></p>
+<p><b>Keyword:</b> <span th:text="${page.keyword}"></span></p>
+<p><b>Content:</b></p>
+<div th:text="${page.content}"></div>
+<p><b>Parent Page ID:</b> <span th:text="${page.parentPageId}"></span></p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Add New Page</h2>
+<form th:action="@{/page/new}" th:object="${page}" method="post">
+    Page Name: <input type="text" th:field="*{pageName}" /><br/>
+    Keyword: <input type="text" th:field="*{keyword}" /><br/>
+    Content: <textarea th:field="*{content}"></textarea><br/>
+    Parent Page ID: <input type="number" th:field="*{parentPageId}" /><br/>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

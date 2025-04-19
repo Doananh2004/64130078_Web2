@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Post Detail</h2>
+<p><b>Title:</b> <span th:text="${post.title}"></span></p>
+<p><b>Content:</b></p>
+<div th:text="${post.content}"></div>
+<p><b>Category ID:</b> <span th:text="${post.categoryId}"></span></p>
+</body>
+</html>

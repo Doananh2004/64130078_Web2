@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <h2>Danh sách Post</h2>
+    <table border="1" width="100%" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Category Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.id}">1</td>
+                <td th:text="${post.title}">Tin tức 1</td>
+                <td th:text="${post.categoryId}">1</td>
+                <td>
+                    <a th:href="@{/post/view/{id}(id=${post.id})}">[view]</a>
+                    <a th:href="@{/post/edit/{id}(id=${post.id})}">[edit]</a>
+                    <a th:href="@{/post/delete/{id}(id=${post.id})}">[delete]</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

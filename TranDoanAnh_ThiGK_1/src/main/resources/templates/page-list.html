@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <h2>Danh sách Page</h2>
+    <table border="1" width="100%" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Page Name</th>
+                <th>Parent Page Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="page : ${pages}">
+                <td th:text="${page.id}">1</td>
+                <td th:text="${page.pageName}">About</td>
+                <td th:text="${page.parentPageId}">0</td>
+                <td>
+                    <a th:href="@{/page/view/{id}(id=${page.id})}">[view]</a>
+                    <a th:href="@{/page/edit/{id}(id=${page.id})}">[edit]</a>
+                    <a th:href="@{/page/delete/{id}(id=${page.id})}">[delete]</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
