@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CSDL Khoa học và Công nghệ - Nha Trang University</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/logo-ntu.png" alt="Nha Trang University Logo">
+            <div class="site-title">
+                <h1>ĐẠI HỌC NHA TRANG</h1>
+                <h2>NHA TRANG UNIVERSITY</h2>
+            </div>
+            <div class="system-title">
+                CSDL KHOA HỌC VÀ CÔNG NGHỆ
+            </div>
+            <button class="login-btn">Đăng nhập</button>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Nhà khoa học</a></li>
+                <li><a href="#">Đề tài khoa học</a></li>
+                <li><a href="#">Bài báo khoa học</a></li>
+                <li><a href="#">Sách và giáo trình</a></li>
+                <li><a href="#">Sản phẩm khác</a></li>
+                <li><a href="#">Thống kê</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>CƠ SỞ DỮ LIỆU <span class="highlight">KHOA HỌC</span> VÀ <span class="highlight">CÔNG NGHỆ</span></h1>
+            <div class="data-stats">
+                <div><strong>DỮ LIỆU NHÀ KHOA HỌC</strong><br>3.400 Kết Quả</div>
+                <div><strong>DỮ LIỆU ĐỀ TÀI KHOA HỌC</strong><br>6.356 Kết Quả</div>
+                <div><strong>DỮ LIỆU BÀI BÁO KHOA HỌC</strong><br>34.025 Kết Quả</div>
+                <div><strong>DỮ LIỆU SÁCH, GIÁO TRÌNH</strong><br>4.510 Kết Quả</div>
+            </div>
+        </div>
+        <div class="search-box">
+            <h2>Tìm Kiếm <span class="highlight">Dữ Liệu</span></h2>
+            <form th:action="@{/search}" method="post">
+    	<input type="text" name="keyword" placeholder="Nhập từ khóa...">
+    	<select name="category">
+        	<option>Tên giải thưởng</option>
+        	<option>Tên người nhận giải</option>
+    	</select>
+    	<button type="submit">Tìm Kiếm</button>
+</form>
+
+        </div>
+    </section>
+</body>
+</html>
