@@ -5,55 +5,224 @@
     <title>CSDL Khoa học và Công nghệ - Nha Trang University</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    	/* Sidebar */
+        .sidebar {
+            width: 270px;
+            background: #102c57;
+            color: white;
+            min-height: 100vh;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: fixed;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .sidebar nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .sidebar nav a:hover,
+        .sidebar nav a.active {
+            background-color: #1f4172;
+        }
+
+        /*dropdown*/
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-toggle {
+            background: none;
+            border: none;
+            color: white;
+            text-align: left;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dropdown-toggle:hover {
+            background-color: #1f4172;
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #1f4172;
+            border-radius: 8px;
+            margin-left: 10px;
+            margin-top: 4px;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            border-radius: 6px;
+            transition: background 0.3s;
+            font-size: 13px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #3b5ea0;
+        }
+
+        /* Hiển thị dropdown khi hover */
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f4172;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 50px;
+            margin-left: 17vw;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+            color: #f0c14b;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="/images/logo-ntu.png" alt="Nha Trang University Logo">
-            <div class="site-title">
-                <h1>ĐẠI HỌC NHA TRANG</h1>
-                <h2>NHA TRANG UNIVERSITY</h2>
-            </div>
-            <div class="system-title">
-                CSDL KHOA HỌC VÀ CÔNG NGHỆ
-            </div>
-            <button class="login-btn">Đăng nhập</button>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="images/logo-ntu.png" alt="Logo" style="width: 220px; height: auto;">
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Nhà khoa học</a></li>
-                <li><a href="#">Đề tài khoa học</a></li>
-                <li><a href="#">Bài báo khoa học</a></li>
-                <li><a href="#">Sách và giáo trình</a></li>
-                <li><a href="#">Sản phẩm khác</a></li>
-                <li><a href="#">Thống kê</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-text">
-            <h1>CƠ SỞ DỮ LIỆU <span class="highlight">KHOA HỌC</span> VÀ <span class="highlight">CÔNG NGHỆ</span></h1>
-            <div class="data-stats">
-                <div><strong>DỮ LIỆU NHÀ KHOA HỌC</strong><br>3.400 Kết Quả</div>
-                <div><strong>DỮ LIỆU ĐỀ TÀI KHOA HỌC</strong><br>6.356 Kết Quả</div>
-                <div><strong>DỮ LIỆU BÀI BÁO KHOA HỌC</strong><br>34.025 Kết Quả</div>
-                <div><strong>DỮ LIỆU SÁCH, GIÁO TRÌNH</strong><br>4.510 Kết Quả</div>
+        <nav>
+            <a href="Trangchu.html" class="active">Trang chủ</a>
+            <a href="nhakhoahoc.html">Nhà khoa học</a>
+            <a href="detaikhoahoc.html">Đề tài khoa học</a>
+            <a href="baibaokhoahoc.html">Bài báo khoa học</a>
+            <a href="sachvagiaotrinh.html">Sách và giáo trình</a>
+            <div class="dropdown">
+                <button class="dropdown-toggle">Khác</button>
+                <div class="dropdown-menu">
+                    <a href="giaithuong.html">Giải thưởng</a>
+                    <a href="congtrinhthuctien.html">Công trình thực tiễn</a>
+                    <a href="Sohuutritue.html">Sở hữu trí tuệ</a>
+                </div>
             </div>
+            <div class="dropdown">
+                <button class="dropdown-toggle">Thống kê</button>
+                <div class="dropdown-menu">
+                    <a href="Thongke/thongkenhakhoahoc.html">Nhà khoa học</a>
+                    <a href="Thongke/thongkedetaikhoahoc.html">Đề tài KHCN</a>
+                    <a href="Thongke/thongkebaibao.html">Bài báo Khoa học</a>
+                    <a href="Thongke/thongkesachvagiaotrinh.html">Sách và Giáo trình</a>
+                    <a href="Thongke/thongkecongtrinhthuctien.html">Công trình thực tiễn</a>
+                    <a href="Thongke/thongkegiaithuong.html">Giải thưởng</a>
+                    <a href="Thongke/thongkesohuutritue.html">Sở hữu trí tuệ</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <section class="main">
+        <div class="container">
+            <h1>CƠ SỞ DỮ LIỆU <span class="highlight">KHOA HỌC</span> VÀ <span class="highlight">CÔNG NGHỆ</span></h1>
         </div>
         <div class="search-box">
             <h2>Tìm Kiếm <span class="highlight">Dữ Liệu</span></h2>
             <form th:action="@{/search}" method="post">
-    	<input type="text" name="keyword" placeholder="Nhập từ khóa...">
-    	<select name="category">
-        	<option>Tên giải thưởng</option>
-        	<option>Tên người nhận giải</option>
-    	</select>
-    	<button type="submit">Tìm Kiếm</button>
-</form>
-
+    			<input type="text" name="keyword" placeholder="Nhập từ khóa...">
+    			<select name="category">
+        			<option>Tên giải thưởng</option>
+        			<option>Tên người nhận giải</option>
+    			</select>
+    			<button type="submit">Tìm Kiếm</button>
+			</form>
         </div>
     </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Giới thiệu</h3>
+                <p>Trang web cung cấp thông tin về cơ sở dữ liệu<br> khoa học, công nghệ, và các thông báo quan<br>
+                    trọng từ
+                    Đại
+                    học Nha Trang.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>Liên hệ</h3>
+                <p>📧 Email: dhnt@ntu.edu.vn</p>
+                <p>📞 Điện thoại: 02583831149</p>
+                <p>📍 Địa chỉ: 02 Nguyễn Đình Chiểu, Vĩnh Thọ, Nha Trang, Khánh Hòa</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Đại học Nha Trang | Thiết kế bởi Phan Anh Nhất
+        </div>
+    </footer>
 </body>
 </html>

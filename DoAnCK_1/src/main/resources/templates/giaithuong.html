@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8" />
@@ -397,7 +397,7 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <img src="images/TRƯỜNG ĐẠI HỌC NHA TRANG.png" alt="" style="width: 240px; height: 80px;">
+                <img src="images/logo-ntu.png" alt="" style="width: 240px; height: 80px;">
             </div>
             <nav>
                 <a href="index.html" class="active"> Trang chủ</a>
@@ -469,82 +469,20 @@
                 </div>
 
                 <div class="article-container">
-                    <div class="article-card">
-                        <h3>Hội nghị Khoa học và Công nghệ tuổi trẻ Ngành Y tế lần thứ XXII</h3>
-                        <p><strong>Năm:</strong> 2024</p>
-                        <p><strong>Đơn vị tặng thưởng:</strong> Bộ y tế</p>
+    				<div class="article-card" th:each="award : ${awards}">
+        				<h3 th:text="${award.title}">Tên giải thưởng</h3>
+        				<p><strong>Ngày tặng:</strong> <span th:text="${#dates.format(award.awardDate, 'yyyy-MM-dd')}">2024-12-27</span></p>
+        				<p><strong>Đơn vị tặng:</strong> <span th:text="${award.organization}">Bộ Giáo dục</span></p>
 
-                        <p><strong>Tác giả:</strong> Phạm Thị ...</p>
-
-                        <div class="bottom-row">
-                            <button class="details-btn">Chi tiết</button>
-                            <button class="details-btn">Xóa</button>
-                            <button class="details-btn">Sửa</button>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <h3>Hội nghị Khoa học và Công nghệ tuổi trẻ Ngành Y tế lần thứ XXII</h3>
-                        <p><strong>Năm:</strong> 2024</p>
-                        <p><strong>Đơn vị tặng thưởng:</strong> Bộ y tế</p>
-
-                        <p><strong>Tác giả:</strong> Phạm Thị ...</p>
-
-                        <div class="bottom-row">
-                            <button class="details-btn">Chi tiết</button>
-                            <button class="details-btn">Xóa</button>
-                            <button class="details-btn">Sửa</button>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <h3>Hội nghị Khoa học và Công nghệ tuổi trẻ Ngành Y tế lần thứ XXII</h3>
-                        <p><strong>Năm:</strong> 2024</p>
-                        <p><strong>Đơn vị tặng thưởng:</strong> Bộ y tế</p>
-
-                        <p><strong>Tác giả:</strong> Phạm Thị ...</p>
-
-                        <div class="bottom-row">
-                            <button class="details-btn">Chi tiết</button>
-                            <button class="details-btn">Xóa</button>
-                            <button class="details-btn">Sửa</button>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <h3>Hội nghị Khoa học và Công nghệ tuổi trẻ Ngành Y tế lần thứ XXII</h3>
-                        <p><strong>Năm:</strong> 2024</p>
-                        <p><strong>Đơn vị tặng thưởng:</strong> Bộ y tế</p>
-
-                        <p><strong>Tác giả:</strong> Phạm Thị ...</p>
-
-                        <div class="bottom-row">
-                            <button class="details-btn">Chi tiết</button>
-                            <button class="details-btn">Xóa</button>
-                            <button class="details-btn">Sửa</button>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <h3>Hội nghị Khoa học và Công nghệ tuổi trẻ Ngành Y tế lần thứ XXII</h3>
-                        <p><strong>Năm:</strong> 2024</p>
-                        <p><strong>Đơn vị tặng thưởng:</strong> Bộ y tế</p>
-
-                        <p><strong>Tác giả:</strong> Phạm Thị ...</p>
-
-                        <div class="bottom-row">
-                            <button class="details-btn">Chi tiết</button>
-                            <button class="details-btn">Xóa</button>
-                            <button class="details-btn">Sửa</button>
-                        </div>
-                    </div>
-
-                </div>
-
+        				<div class="bottom-row">
+            				<button class="details-btn">Chi tiết</button>
+            				<button class="details-btn">Xóa</button>
+            				<button class="details-btn">Sửa</button>
+        				</div>
+    				</div>
+				</div>
             </div>
-
         </main>
-
 
     </div>
     <footer class="footer">

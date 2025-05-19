@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -246,10 +246,10 @@
 
     <aside class="sidebar">
         <div class="logo">
-            <img src="logo-ntu.png" alt="Logo" style="width: 220px; height: auto;">
+            <img src="images/logo-ntu.png" alt="Logo" style="width: 220px; height: auto;">
         </div>
         <nav>
-            <a href="Trangchu.html" class="active">Trang chủ</a>
+            <a href="index.html" class="active">Trang chủ</a>
             <a href="nhakhoahoc.html">Nhà khoa học</a>
             <a href="detaikhoahoc.html">Đề tài khoa học</a>
             <a href="baibaokhoahoc.html">Bài báo khoa học</a>
@@ -268,7 +268,7 @@
                     <a href="Thongke/thongkenhakhoahoc.html">Nhà khoa học</a>
                     <a href="Thongke/thongkedetaikhoahoc.html">Đề tài KHCN</a>
                     <a href="Thongke/thongkebaibao.html">Bài báo Khoa học</a>
-                    <a href="Thongke/thongkesachvagiaotrinh.html">Sách & Giáo trình</a>
+                    <a href="Thongke/thongkesachvagiaotrinh.html">Sách và Giáo trình</a>
                     <a href="Thongke/thongkecongtrinhthuctien.html">Công trình thực tiễn</a>
                     <a href="Thongke/thongkegiaithuong.html">Giải thưởng</a>
                     <a href="Thongke/thongkesohuutritue.html">Sở hữu trí tuệ</a>
@@ -280,30 +280,23 @@
     <main class="main">
         <div class="container">
             <h2>CHỈNH SỬA GIẢI THƯỞNG</h2>
-            <form class="edit-form" id="editForm">
-                <div class="form-row">
-                    <label for="awardId">Mã giải thưởng:</label>
-                    <input type="text" id="awardId" name="awardId" value="GT001">
-                </div>
-                <div class="form-row">
-                    <label for="awardName">Tên giải thưởng:</label>
-                    <textarea id="awardName" name="awardName"
-                        required>Hội nghị khoa học công nghệ và tuổi trẻ Ngành Y tế năm 2024</textarea>
-                </div>
-                <div class="form-row">
-                    <label for="awardingOrg">Đơn vị tặng:</label>
-                    <input type="text" id="awardingOrg" name="awardingOrg" value="Trường Đại học Y Dược Cần Thơ"
-                        required>
-                </div>
-
-                <div class="form-row">
-                    <label for="awardDate">Năm tặng:</label>
-                    <input type="date" id="awardDate" name="awardDate" value="2024-12-27" required>
-                </div>
-                <div class="button-group">
-                    <button type="submit" class="save-btn">Lưu</button>
-                    <button type="button" class="cancel-btn">Hủy</button>
-                </div>
+            <form th:action="@{/giaithuong/edit}" th:object="${award}" method="post" class="edit-form" id="editForm">
+    			<div class="form-row">
+        			<label for="awardId">Mã giải thưởng:</label>
+        			<input type="text" th:field="*{id}" readonly>
+    			</div>
+    			<div class="form-row">
+        			<label for="awardName">Tên giải thưởng:</label>
+        			<textarea th:field="*{name}" required></textarea>
+    			</div>
+    			<div class="form-row">
+        			<label for="awardingOrg">Đơn vị tặng:</label>
+        			<input type="text" th:field="*{organization}" required>
+    			</div>
+    			<div class="form-row">
+        			<label for="awardDate">Năm tặng:</label>
+        			<input type="date" th:field="*{dateAwarded}" required>
+    			</div>
             </form>
         </div>
     </main>
