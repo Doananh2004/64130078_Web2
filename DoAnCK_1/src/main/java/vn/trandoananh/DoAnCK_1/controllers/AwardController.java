@@ -44,4 +44,9 @@ public class AwardController {
         awardRepository.save(award);
         return "redirect:/giaithuong"; // quay về trang danh sách
     }
+    
+    @GetMapping("/")
+    public String getGiaiThuongAll() {
+    	return "giaithuong";
+    }
 }
